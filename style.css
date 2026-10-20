@@ -1,0 +1,171 @@
+:root {
+  font-family: "Segoe UI", sans-serif;
+  color: #1f2937;
+  background: #f1f5f9;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px;
+  place-items: center;
+}
+
+.card {
+  width: min(100%, 480px);
+  padding: 48px 40px;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 20px 50px rgb(15 23 42 / 8%);
+  text-align: center;
+}
+
+.eyebrow {
+  color: #4f46e5;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+h1 {
+  margin: 16px 0;
+  font-size: clamp(2rem, 8vw, 3rem);
+}
+
+p {
+  margin: 0 auto 28px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+button {
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 10px;
+  background: #4f46e5;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: #4338ca;
+}
+
+button:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 3px;
+}
+
+.clock {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 132px;
+  aspect-ratio: 1;
+  border: 5px solid #4f46e5;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 8px 24px rgb(15 23 42 / 14%);
+}
+
+.clock-number {
+  position: absolute;
+  color: #1f2937;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.clock-number-12 {
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.clock-number-3 {
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+}
+
+.clock-number-6 {
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.clock-number-9 {
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
+}
+
+.clock-hand {
+  position: absolute;
+  bottom: 50%;
+  left: calc(50% - 1px);
+  border-radius: 999px;
+  transform-origin: center bottom;
+}
+
+.clock-hour {
+  width: 4px;
+  height: 31px;
+  margin-left: -1px;
+  background: #1f2937;
+}
+
+.clock-minute {
+  width: 3px;
+  height: 43px;
+  background: #4f46e5;
+}
+
+.clock-second {
+  width: 1px;
+  height: 47px;
+  background: #ef4444;
+}
+
+.clock-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #ef4444;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 480px) {
+  .clock {
+    right: 16px;
+    bottom: 16px;
+    width: 108px;
+  }
+
+  .clock-hour {
+    height: 25px;
+  }
+
+  .clock-minute {
+    height: 35px;
+  }
+
+  .clock-second {
+    height: 39px;
+  }
+}
