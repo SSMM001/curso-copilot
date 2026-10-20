@@ -1,9 +1,24 @@
 :root {
   font-family: "Segoe UI", sans-serif;
-  color: #1f2937;
-  background: #f1f5f9;
+  color-scheme: light;
+  --page-background: #f1f5f9;
+  --surface-background: #fff;
+  --text-color: #1f2937;
+  --muted-text-color: #64748b;
+  --border-color: #e2e8f0;
+  color: var(--text-color);
+  background: var(--page-background);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page-background: #0f172a;
+  --surface-background: #1e293b;
+  --text-color: #f1f5f9;
+  --muted-text-color: #cbd5e1;
+  --border-color: #334155;
 }
 
 * {
@@ -16,14 +31,17 @@ body {
   margin: 0;
   padding: 24px;
   place-items: center;
+  background: var(--page-background);
+  color: var(--text-color);
+  transition: background-color 160ms ease, color 160ms ease;
 }
 
 .card {
   width: min(100%, 480px);
   padding: 48px 40px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border-color);
   border-radius: 20px;
-  background: #fff;
+  background: var(--surface-background);
   box-shadow: 0 20px 50px rgb(15 23 42 / 8%);
   text-align: center;
 }
@@ -42,7 +60,7 @@ h1 {
 
 p {
   margin: 0 auto 28px;
-  color: #64748b;
+  color: var(--muted-text-color);
   line-height: 1.6;
 }
 
@@ -56,6 +74,12 @@ button {
   font: inherit;
   font-weight: 600;
   transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.theme-button {
+  position: fixed;
+  top: 24px;
+  right: 24px;
 }
 
 button:hover {
@@ -76,13 +100,13 @@ button:focus-visible {
   aspect-ratio: 1;
   border: 5px solid #4f46e5;
   border-radius: 50%;
-  background: #fff;
+  background: var(--surface-background);
   box-shadow: 0 8px 24px rgb(15 23 42 / 14%);
 }
 
 .clock-number {
   position: absolute;
-  color: #1f2937;
+  color: var(--text-color);
   font-size: 0.8rem;
   font-weight: 700;
   line-height: 1;
@@ -124,7 +148,7 @@ button:focus-visible {
   width: 4px;
   height: 31px;
   margin-left: -1px;
-  background: #1f2937;
+  background: var(--text-color);
 }
 
 .clock-minute {
@@ -151,6 +175,11 @@ button:focus-visible {
 }
 
 @media (max-width: 480px) {
+  .theme-button {
+    top: 16px;
+    right: 16px;
+  }
+
   .clock {
     right: 16px;
     bottom: 16px;

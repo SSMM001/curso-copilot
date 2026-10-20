@@ -1,10 +1,18 @@
 
 const message = document.querySelector("#message");
 const button = document.querySelector("#greet-button");
+const themeButton = document.querySelector("#theme-button");
 
 button.addEventListener("click", () => {
   message.textContent = "¡Qué bueno verte por aquí!";
   button.textContent = "¡Hola!";
+});
+
+themeButton.addEventListener("click", () => {
+  const isDark = document.documentElement.dataset.theme !== "dark";
+  document.documentElement.dataset.theme = isDark ? "dark" : "light";
+  themeButton.textContent = isDark ? "Activar tema claro" : "Activar tema oscuro";
+  themeButton.setAttribute("aria-pressed", String(isDark));
 });
 
 const clock = document.querySelector("#clock");
