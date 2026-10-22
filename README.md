@@ -31,6 +31,16 @@ python calculadora.py
 
 El script calcula la media de una lista de ejemplo y muestra el resultado en la terminal. No forma parte de la página web.
 
+## Cómo ejecutar las pruebas
+
+Las pruebas usan `unittest`, incluido en Python 3, así que no requieren instalar dependencias:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+El workflow `.github/workflows/tests.yml` ejecuta esta suite en cada `push` y `pull_request`.
+
 ## Estructura del proyecto
 
 ```text
@@ -39,5 +49,7 @@ mi_web/
 ├── style.css        # Estilos, temas y diseño adaptable
 ├── main.js          # Interacciones y reloj analógico
 ├── calculadora.py   # Ejemplo independiente de cálculo de media
+├── tests/
+│   └── test_calculadora.py # Pruebas de la función de media
 └── README.md        # Documentación del proyecto
 ```

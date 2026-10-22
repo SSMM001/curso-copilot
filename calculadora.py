@@ -5,4 +5,6 @@ def calcular_media(numeros):
     return sum(numeros) / len(numeros)
 
 datos = [3,4,4,15]
-print(calcular_media(datos))
+
+if __name__ == "__main__":
+    print(calcular_media(datos))
