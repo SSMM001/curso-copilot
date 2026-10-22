@@ -1,4 +1,4 @@
-git<!doctype html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -12,26 +12,41 @@ git<!doctype html>
     <script src="main.js" defer></script>
   </head>
   <body>
-    <button id="theme-button" class="theme-button" type="button" aria-pressed="false">
-      Activar tema oscuro
-    </button>
-    <main class="card">
-      <span class="eyebrow">MI ESPACIO EN LA WEB</span>
-      <h1>¡Hola, mundo!</h1>
-      <p id="message">Esta es mi primera página web. Me alegra que estés aquí.</p>
-      <button id="greet-button" type="button">Salúdame</button>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Mi espacio, inicio">
+        <span class="brand-mark" aria-hidden="true">m.</span>
+        <span class="brand-copy">
+          <strong>Mi espacio</strong>
+          <span>Un rincón en internet</span>
+        </span>
+      </a>
+      <div class="header-actions">
+        <span class="header-note">
+          <span class="status-dot" aria-hidden="true"></span>
+          Hecho con curiosidad
+        </span>
+        <button id="theme-button" class="theme-button" type="button" aria-pressed="false">
+          <span id="theme-button-label">Activar tema oscuro</span>
+        </button>
+      </div>
+    </header>
+    <main class="main-content" id="inicio">
+      <section class="card" aria-labelledby="welcome-title">
+        <span class="eyebrow">MI ESPACIO EN LA WEB</span>
+        <h1 id="welcome-title">¡Hola, mundo!</h1>
+        <p id="message">Esta es mi primera página web. Me alegra que estés aquí.</p>
+        <button id="greet-button" type="button">Salúdame</button>
+      </section>
+      <div class="clock" id="clock" role="img" aria-label="Reloj analógico">
+        <span class="clock-number clock-number-12">12</span>
+        <span class="clock-number clock-number-3">3</span>
+        <span class="clock-number clock-number-6">6</span>
+        <span class="clock-number clock-number-9">9</span>
+        <span class="clock-hand clock-hour" id="clock-hour"></span>
+        <span class="clock-hand clock-minute" id="clock-minute"></span>
+        <span class="clock-hand clock-second" id="clock-second"></span>
+        <span class="clock-center"></span>
+      </div>
     </main>
-    <div class="clock" id="clock" role="img" aria-label="Reloj analógico">
-      <span class="clock-number clock-number-12">12</span>
-      <span class="clock-number clock-number-3">3</span>
-      <span class="clock-number clock-number-6">6</span>
-      <span class="clock-number clock-number-9">9</span>
-      <span class="clock-hand clock-hour" id="clock-hour"></span>
-      <span class="clock-hand clock-minute" id="clock-minute"></span>
-      <span class="clock-hand clock-second" id="clock-second"></span>
-      <span class="clock-center"></span>
-    </div>
   </body>
 </html>
-
-

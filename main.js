@@ -2,6 +2,7 @@
 const message = document.querySelector("#message");
 const button = document.querySelector("#greet-button");
 const themeButton = document.querySelector("#theme-button");
+const themeButtonLabel = document.querySelector("#theme-button-label");
 
 button.addEventListener("click", () => {
   message.textContent = "¡Qué bueno verte por aquí!";
@@ -11,7 +12,7 @@ button.addEventListener("click", () => {
 themeButton.addEventListener("click", () => {
   const isDark = document.documentElement.dataset.theme !== "dark";
   document.documentElement.dataset.theme = isDark ? "dark" : "light";
-  themeButton.textContent = isDark ? "Activar tema claro" : "Activar tema oscuro";
+  themeButtonLabel.textContent = isDark ? "Activar tema claro" : "Activar tema oscuro";
   themeButton.setAttribute("aria-pressed", String(isDark));
 });
 
